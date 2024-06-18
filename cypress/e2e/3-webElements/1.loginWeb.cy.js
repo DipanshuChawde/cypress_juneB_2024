@@ -29,4 +29,6 @@ describe('verify contact us page', function () {
 
         cy.contains('Error: Invalid email address').should('be.visible')
     })
+
+    
 })
