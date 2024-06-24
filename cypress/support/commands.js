@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+// -- This is a parent command --
+Cypress.Commands.add('contactUs', (fn,ln,em,msg,css) => { 
+    cy.get('[name="first_name"]').type(fn)
+    cy.get('[name="last_name"]').type(ln)
+    cy.get('[name="email"]').type(em)
+    cy.get('[name="message"]').type(msg)
+    cy.get(css).click()
+})
+
+
+Cypress.Commands.add('OHRMLogin',(un,pw)=>{
+    cy.get('[name="username"]').type(un)
+    cy.get('[name="password"]').type(pw)
+
+    cy.get('[type="submit"]').click()
+})

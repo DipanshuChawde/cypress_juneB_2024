@@ -12,3 +12,8 @@ Installation steps for cypress
 3. npm init -y               ------ pakage.json file created
 4. npm install cypress --save-dev      ------ cypress install latest version
 5. npx cypress open          ------ cypress test runner will open
+---------------------------------------------------------------------------------
+
+Topics Covered 
+1. Basic
+2.Hooks and Commands
