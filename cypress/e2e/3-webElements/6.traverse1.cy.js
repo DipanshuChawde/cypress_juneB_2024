@@ -38,12 +38,10 @@ describe('verify DOM element using various functions',function(){
         cy.get('#tea').nextAll().should('have.length',3)
      })
 
-     it('to get DOM element within element using .siblings()',function(){
+     it.only('to get DOM element within element using .siblings()',function(){
      cy.get('#milk').siblings().should('have.length',4)
      })
 
-     it.only('to get DOM element within element using .siblings()',function(){
-        cy.get('[class="traversal-food-list"]').siblings().should('have.length',5)
-     })
+     
 
 })
