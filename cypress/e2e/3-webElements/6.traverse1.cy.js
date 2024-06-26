@@ -29,4 +29,21 @@ describe('verify DOM element using various functions',function(){
     it('to get DOM element within element using .next()',function(){
        cy.get('#espresso').next().should('have.text','Sugar')
     })
+
+    it('to get DOM element within element using .prevAll()',function(){
+        cy.get('#milk').prevAll().should('have.length',2)
+     })
+
+     it('to get DOM element within element using .nextAll()',function(){
+        cy.get('#tea').nextAll().should('have.length',3)
+     })
+
+     it('to get DOM element within element using .siblings()',function(){
+     cy.get('#milk').siblings().should('have.length',4)
+     })
+
+     it.only('to get DOM element within element using .siblings()',function(){
+        cy.get('[class="traversal-food-list"]').siblings().should('have.length',5)
+     })
+
 })
