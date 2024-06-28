@@ -54,7 +54,26 @@ describe('verify DOM element using various functions', function () {
         cy.get('#milk').parentsUntil('.container').should('have.length', 3)
     })
 
+    it('to get DOM element within element using .filter()', function () {
+        cy.get('.traversal-button-states').children().filter('.disabled').should('have.text','Warning')
+    })
+
+    it('to get DOM element within element using .not()', function () {
+        cy.get('.traversal-button-states').children().not('.disabled').should('have.length',3)
+    })
+
+    it('to get DOM element within element using .find()', function () {
+        cy.get('#form-textfield').find('[name="firstname"]').type('dipanshu')
+        cy.get('#form-textfield').find('[name="lastname"]').type('chawde')
+    })
+
+    it.only('to get DOM element within element using .closest()', function () {
+        cy.get('[name="firstname"]').closest('.thumbnail').should('have.attr','id','thumbnail-1')
+        cy.get('.navbar-toggle').closest('.navbar').should('have.attr','role','navigation')
+    })
+
     
+
 
 
 
