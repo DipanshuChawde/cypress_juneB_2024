@@ -24,4 +24,8 @@ describe('verify login page for OHRM',function(){
 
         cy.get('.oxd-alert-content-text').should('have.text','Invalid credentials')
     })
+
+    it('jdks',function(){
+        cy.visit('https://www.redbus.in/')
+    })
 })
