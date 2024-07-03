@@ -29,7 +29,11 @@ describe('verify radip button and check box',function(){
         cy.get('[value="option-2"]').click().should('be.checked')
         cy.get('[value="option-2"]').click().should('not.be.checked')
 
+   })
 
-    })
+   it('verify radio button letkodeit',function(){
+    cy.visit('https://www.letskodeit.com/practice')
+    
+   })
 
 })
