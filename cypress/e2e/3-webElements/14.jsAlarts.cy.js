@@ -20,7 +20,7 @@ describe("handeling js alarts",function(){
         cy.get('#result').should('have.text','You successfully clicked an alert')
     })
 
-    it('handle window:confirm',function(){
+    it('handle window:confirm for ok',function(){
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
 
         cy.on('window:confirm',function(text){
@@ -34,7 +34,7 @@ describe("handeling js alarts",function(){
         
     })
 
-    it('handle window:confirm',function(){
+    it('handle window:confirm for cancle',function(){
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
 
         cy.on('window:confirm',function(text){
