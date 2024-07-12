@@ -54,7 +54,7 @@ describe("handeling js alarts",function(){
 
         cy.window().then(function(win){
             cy.stub(win,'prompt').returns('i am learning cypress')
-            return true
+           // return true
         })
         cy.get('[onclick="jsPrompt()"]').click()
         cy.get('#result').should('have.text','You entered: i am learning cypress')
@@ -65,8 +65,8 @@ describe("handeling js alarts",function(){
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
 
         cy.window().then(function(win){
-            cy.stub(win,'prompt').returns('null')
-            return false
+            cy.stub(win,'prompt').returns(null)
+           // return false
         })
         cy.get('[onclick="jsPrompt()"]').click()
         cy.get('#result').should('have.text','You entered: null')
