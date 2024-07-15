@@ -27,6 +27,10 @@
 
 
 // -- This is a parent command --
+
+// Cypress.Commands.add('getIFrameBody',(str)=>{
+//     return cy.get(str).its('0.contentDocument.body').then(cy.wrap)
+//     })
 Cypress.Commands.add('contactUs', (fn,ln,em,msg,css) => { 
     cy.get('[name="first_name"]').type(fn)
     cy.get('[name="last_name"]').type(ln)
@@ -42,3 +46,4 @@ Cypress.Commands.add('OHRMLogin',(un,pw)=>{
 
     cy.get('[type="submit"]').click()
 })
+
