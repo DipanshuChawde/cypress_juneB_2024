@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  //chromeWebSecurity: false,
+  
+  chromeWebSecurity : false, //for multitab and multi-window
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
