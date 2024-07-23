@@ -22,13 +22,13 @@ describe('verify multitab and multi window',function(){
     })
 
     //rahul shetty
-    it.only('verify multi tab by removing target attribute',function(){
+    it('verify multi tab by removing target attribute',function(){
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         cy.get('#opentab').first().invoke('removeAttr','target').click()
         cy.url().should('contain','qaclickacademy')
     })
 
-    it.only('verify multi tab without removing target attribute',function(){
+    it('verify multi tab without removing target attribute',function(){
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         cy.get('#opentab').first().then(function(newTab){
             let url= newTab.prop('href')
@@ -36,5 +36,33 @@ describe('verify multitab and multi window',function(){
             cy.url().should('contain','qaclickacademy')
         })
     
+    })
+
+    //verify multi window in cypress
+
+    it.only("verify multi window -letkodeit",function(){
+        cy.visit('https://www.letskodeit.com/practice')
+
+        cy.window().then((win)=>{
+            cy.stub(win, 'open').callsFake((url)=>{
+                win.location.href = url
+            })
+        })
+
+        cy.get('#openwindow').click()
+        cy.url().should('contain','/courses')
+    })
+
+    it.only('verify multi window -rahulshetty',function(){
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+
+        cy.window().then((win)=>{
+            cy.stub(win, 'open').callsFake((url)=>{
+                win.location.href = url
+            })
+        })
+
+        cy.get('#openwindow').click()
+        cy.url().should('contain','qaclickacademy')
     })
 })
