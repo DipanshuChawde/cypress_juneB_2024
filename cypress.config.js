@@ -1,11 +1,17 @@
 const { defineConfig } = require("cypress");
 
+const { verifyDownloadTasks } = require('cy-verify-downloads'); //file download option
 module.exports = defineConfig({
   
   chromeWebSecurity : false, //for multitab and multi-window
+
+  //downloadsFolder:'cypress/e2e/6-downloadFile/downloadedFile',
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+
+      on('task', verifyDownloadTasks); //file download option
 
       //task1 (file cyTask.cy.js)
       // on('task', {
