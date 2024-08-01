@@ -1,3 +1,32 @@
+///<reference types='cypress' />
+describe('verify exel data payload in fixture',function(){
+    it('exel data',function(){
+        cy.parseXlsx('C:/Users/tanis/Documents/dipanshu_sw/Cypress_New/cypressJuneB2024/cypress/fixtures/exelPayload.xlsx').then((jsonData)=>{
+            cy.log(jsonData[0].data)
+            //cy.log(jsonData[0].data[1][0])
+
+            for(let i=1; i < jsonData[0].data.length; i++){
+                cy.visit('https://webdriveruniversity.com/Contact-Us/contactus.html')
+                //                                                  r   c
+                cy.get('[name="first_name"]').type(jsonData[0].data[i][0])
+                cy.get('[name="last_name"]').type(jsonData[0].data[i][1])
+                cy.get('[name="email"]').type(jsonData[0].data[i][2])
+                cy.get('[name="message"]').type(jsonData[0].data[i][3])
+
+                cy.get('[type="submit"]').click()
+        
+                cy.get('h1').should('have.text', 'Thank You for your Message!')
+            }
+
+        })
+    })
+})
+
+
+
+
+
+
 
 
 
