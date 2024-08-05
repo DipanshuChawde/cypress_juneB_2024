@@ -10,7 +10,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false, //for multitab and multi-window
 
   //downloadsFolder:'cypress/e2e/6-downloadFile/downloadedFile',
-
+  //includeShadowDom:true,
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -43,7 +43,12 @@ module.exports = defineConfig({
       // //-------------------------
 
       //task1 (file cyTask.cy.js)
-      //on('task',taskname(){funcn def})
+      // on('task', { //syntax
+      //   taskname() {
+      //     function def
+      //   }
+      // })
+
       on('task', {
         print() {
           console.log('i am learning cypress')
