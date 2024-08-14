@@ -16,7 +16,7 @@ describe('verify API testing in cypress-gorest', function () {
         })
     })
 
-    it('gorest -POST request',()=>{
+    it('gorest e2e -POST/PUT/DELETE request',()=>{
         cy.request({
             method : 'POST',
             url : '/public/v2/users',
@@ -30,15 +30,43 @@ describe('verify API testing in cypress-gorest', function () {
                 Authorization : `Bearer ${token}`
             }
         }).then((resP)=>{
-            cy.log(resP)
+            //cy.log(resP)
             //cy.log(resP.body.id)
             expect(resP.status).to.eq(201)
             expect(resP.body).to.have.keys('id','name','email','gender','status')
-            //return resP.body.id
+            return resP.body.id
          })
-        //.then((id)=>{
-
-        // })
+        .then((id)=>{
+            cy.request({
+                method : 'PUT',
+                url : `/public/v2/users/${id}`,
+                body : {
+                    "name":"Tanish",
+                    "email":`dipanshu${Math.floor(Math.random()*1000)}@15ce.com`, 
+                    "status":"active"
+                },
+                headers : {
+                    Authorization : `Bearer ${token}`
+                }
+            }).then((resU)=>{
+                //cy.log(resU)
+                expect(resU.status).to.eq(200)
+                expect(resU.body.name).to.eq('Tanish')
+                return
+            }).then(()=>{
+                cy.request({
+                    method : 'DELETE',
+                    url : `/public/v2/users/${id}`,
+                    headers : {
+                        Authorization : `Bearer ${token}`
+                    }
+                }).then((resD)=>{
+                    cy.log(resD)
+                    expect(resD.body).to.eq('')
+                    expect(resD.status).to.eq(204)
+                })
+            })
+        })
 
     })
 })
