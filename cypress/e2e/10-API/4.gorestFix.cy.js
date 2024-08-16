@@ -16,7 +16,7 @@ describe('verify API testing in cypress-gorest with fixture', function () {
                     Authorization : `Bearer ${token}`
                 }
             }).then((resC)=>{
-                cy.log(resC)
+                //cy.log(resC)
                 expect(resC.status).to.eq(201)
                 expect(resC.body.name).to.eq(el.name)
                 return resC.body.id
