@@ -31,7 +31,7 @@
 // Cypress.Commands.add('getIFrameBody',(str)=>{
 //     return cy.get(str).its('0.contentDocument.body').then(cy.wrap)
 //     })
-Cypress.Commands.add('contactUs', (fn,ln,em,msg,css) => { 
+Cypress.Commands.add('contactUs', (fn, ln, em, msg, css) => {
     cy.get('[name="first_name"]').type(fn)
     cy.get('[name="last_name"]').type(ln)
     cy.get('[name="email"]').type(em)
@@ -40,17 +40,27 @@ Cypress.Commands.add('contactUs', (fn,ln,em,msg,css) => {
 })
 
 
-Cypress.Commands.add('OHRMLogin',(un,pw)=>{
+Cypress.Commands.add('OHRMLogin', (un, pw) => {
     cy.get('[name="username"]').type(un)
     cy.get('[name="password"]').type(pw)
 
     cy.get('[type="submit"]').click()
 })
 
-Cypress.Commands.add('getIFrameBody', (css) => { 
+Cypress.Commands.add('getIFrameBody', (css) => {
     return cy.get(css).its('0.contentDocument.body').then(cy.wrap)
+})
+
+Cypress.Commands.add('parseXlsx', (inputFile) => {
+    return cy.task('parseXlsx', { filePath: inputFile })
+})
+
+Cypress.Commands.add('HRMLoginWithSession', (un, pw) => {
+    cy.session([un,pw],()=>{
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.get('[name="username"]').type(un)
+        cy.get('[name="password"]').type(pw)
+        cy.get('.orangehrm-login-button').click()
+    })
  })
 
- Cypress.Commands.add('parseXlsx', (inputFile) => {
-             return cy.task('parseXlsx' , { filePath: inputFile})
-        })
