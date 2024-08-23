@@ -7,7 +7,7 @@ import user2 from "../../fixtures/api1.1-reqres.json"
 // PUT - update 
 // DELETE - delete
 describe('verify API testing in cypress',function(){
-    it('reqres-GET request (retrive)',function(){
+    it.only('reqres-GET request (retrive)',function(){
         cy.request({
             url:'https://reqres.in/api/users?page=2',
             method : "GET"

@@ -15,17 +15,14 @@ describe('verify contact us page', function () { //scenario
         cy.get('input[name="last_name"]').type('chawde')
         cy.get('input[name="email"]').type('dipanshu@gmail.com')
         cy.get('textarea[name="message"]').type('i am learning cypress')
+        cy.screenshot()
+        cy.get('[type="submit"]').screenshot('submitbtn')
         cy.get('[type="submit"]').click()
 
         //Assertion
-        cy.get('h1').should('have.text','Thank You for your Message!')
-       
-    })
-
-    it('verify contact ud page for invalid data', function () {
+        cy.get('h1').should('have.text', 'Thank You for your Message!')
 
     })
-
 
 
 })

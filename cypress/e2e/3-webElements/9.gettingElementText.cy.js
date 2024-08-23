@@ -12,6 +12,7 @@ describe('get element text using .invoke(), .text()',function(){
         cy.visit('https://www.webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html')
         cy.get('.section_header').then(($el)=>{
             cy.log($el.text())
+            
         })
     })
 })

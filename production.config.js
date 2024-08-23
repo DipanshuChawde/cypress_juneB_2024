@@ -1,10 +1,11 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
+
 module.exports = defineConfig({
-    e2e: {
-        baseUrl: 'https://www.saucedemo.com/v1/'
-    },
+  e2e: {
+    baseUrl: 'https://practice.automationtesting.in/',
+  },
     env: {
-        username: "problem_user",
-        password: "secret_sauce"
+        username: "dipanshu1@gmail.com",
+        password: "dipanshu1"
     }
 })

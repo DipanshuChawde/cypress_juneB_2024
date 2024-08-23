@@ -6,13 +6,13 @@ const path = require('path'); // for exel file payload
 
 const { verifyDownloadTasks } = require('cy-verify-downloads'); //file download option
 module.exports = defineConfig({
-
+  video: true,
   chromeWebSecurity: false, //for multitab and multi-window
 
   //downloadsFolder:'cypress/e2e/6-downloadFile/downloadedFile',
   //includeShadowDom:true,
   e2e: {
-    baseUrl : 'https://gorest.co.in/',
+   // baseUrl : 'https://gorest.co.in/',
    // baseUrl:'https://gorest.co.in/',
     setupNodeEvents(on, config) {
       // implement node event listeners here
