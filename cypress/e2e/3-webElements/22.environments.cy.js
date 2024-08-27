@@ -20,3 +20,8 @@ describe('varify environments in cypress', function () {
 
     })
 })
+
+
+// first way using npx cypress open 
+// npx cypress open --config-file stage.config.js
+// npx cypress open --config-file prod.config.js 
