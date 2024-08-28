@@ -6,7 +6,7 @@ describe('varify environments in cypress', function () {
         // cy.get('[id="password"]').type('dipanshu@1')
         // cy.get('[name="login"]').click()
         // let email = 'productionTesting@gmail.com'
-        // let uemai = email.split('@')
+        // let uemai = email.split('@') //['productionTesting','gmail.com' ]
         // cy.log(uemai[0])
         // cy.get('strong').should('have.text', uemai[0])
 
@@ -25,3 +25,17 @@ describe('varify environments in cypress', function () {
 // first way using npx cypress open 
 // npx cypress open --config-file stage.config.js
 // npx cypress open --config-file prod.config.js 
+
+//second way
+//npx cypress run --spec "cypress\e2e\3-webElements\22.environments.cy.js" --browser edge --headed --config-file stage.config.js
+//npx cypress run --spec "cypress\e2e\3-webElements\22.environments.cy.js" --browser edge --headed --config-file prod.config.js
+
+//third way
+//third way to create short cut command
+// create below script command in package.json
+// "stage-env-test" : "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file stage.config.js",
+// "prod-env-test" : "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file prod.config.js",
+ 
+//and run following command on cli
+//npm run stage-env-test
+//npm run prod-env-test

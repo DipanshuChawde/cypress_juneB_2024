@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "stage-env-test" : "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file stage.config.js",
+    "prod-env-test" : "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file prod.config.js",
     "stage-test" : "npx cypress run --spec cypress/e2e/myPract/19.configurations.cy.js --browser edge --headed --config-file stagging.config.js",
     "prod-test" : "npx cypress run --spec cypress/e2e/myPract/19.configurations.cy.js --browser edge --headed --config-file production.config.js"
   },
