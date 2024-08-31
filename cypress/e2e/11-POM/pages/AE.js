@@ -37,7 +37,9 @@ export default class AEPage {
         //login
         loginEmail : '[data-qa="login-email"]',
         loginPw : '[data-qa="login-password"]',
-        loginBtn : '[data-qa="login-button"]'
+        loginBtn : '[data-qa="login-button"]',
+        loginVerify : '[class="fa fa-user"]',
+        validateUsr : 'ul[class="nav navbar-nav"] > li'
     }
 
     //new user signup
@@ -83,5 +85,15 @@ export default class AEPage {
 
     btnClick(btncss){
         cy.get(btncss).click()
+    }
+
+    loginUser(el){
+        cy.get(this.selector.loginEmail).type(el.email)
+        cy.get(this.selector.loginPw).type(el.password)
+        cy.get(this.selector.loginBtn).click()
+    }
+
+    validateLoginUser(el){
+        cy.get(this.selector.validateUsr).eq(9).should('contain',el.name)
     }
 } 
