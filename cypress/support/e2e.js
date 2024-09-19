@@ -21,3 +21,6 @@ import './commands'
 
 
 require('cy-verify-downloads').addCustomCommand(); //file download option
+
+
+import 'cypress-mochawesome-reporter/register';  // for cypress-mochawesome-reporter

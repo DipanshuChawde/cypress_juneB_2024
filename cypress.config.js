@@ -6,6 +6,8 @@ const path = require('path'); // for exel file payload
 
 const { verifyDownloadTasks } = require('cy-verify-downloads'); //file download option
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter', // for cypress-mochawesome-reporter
+
   video: true,
   chromeWebSecurity: false, //for multitab and multi-window
 
@@ -15,6 +17,7 @@ module.exports = defineConfig({
    // baseUrl : 'https://gorest.co.in/',
    // baseUrl:'https://gorest.co.in/',
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);  // for cypress-mochawesome-reporter
       // implement node event listeners here
 
       on('task', verifyDownloadTasks); //file download option
