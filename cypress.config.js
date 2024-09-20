@@ -13,6 +13,11 @@ module.exports = defineConfig({
 
   //downloadsFolder:'cypress/e2e/6-downloadFile/downloadedFile',
   //includeShadowDom:true,
+//------------------
+env:{
+  "TAGS" : "@focus"
+},
+//-------------------
   e2e: {
    // baseUrl : 'https://gorest.co.in/',
    // baseUrl:'https://gorest.co.in/',
