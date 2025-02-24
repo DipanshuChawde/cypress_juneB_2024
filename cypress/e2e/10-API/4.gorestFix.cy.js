@@ -10,7 +10,7 @@ describe('verify API testing in cypress-gorest with fixture', function () {
         it('gorest e2e -POST/PUT/DELETE request with fixture', () => {
             cy.request({
                 method: 'POST',
-                url: '/public/v2/users',
+                url: '/public/v2/users', //set baseUrl : 'https://gorest.co.in/' in config.js
                 body : el,
                 headers : {
                     Authorization : `Bearer ${token}`

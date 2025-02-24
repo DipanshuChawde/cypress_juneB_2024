@@ -8,7 +8,10 @@
     "stage-env-test": "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file stage.config.js",
     "prod-env-test": "npx cypress run --spec cypress/e2e/3-webElements/22.environments.cy.js --browser edge --headed --config-file prod.config.js",
     "stage-test": "npx cypress run --spec cypress/e2e/myPract/19.configurations.cy.js --browser edge --headed --config-file stagging.config.js",
-    "prod-test": "npx cypress run --spec cypress/e2e/myPract/19.configurations.cy.js --browser edge --headed --config-file production.config.js"
+    "prod-test": "npx cypress run --spec cypress/e2e/myPract/19.configurations.cy.js --browser edge --headed --config-file production.config.js",
+    "myTest": "npx cypress run --headed",
+    "cypress:parallel": "cypress-parallel -d cypress/e2e/parallelExe/ -t 2 -s myTest",
+    "cypress:parallel:api": "cypress-parallel -d cypress/e2e/10-API/ -t 4 -s myTest"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +21,9 @@
     "cypress": "^13.11.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "node-xlsx": "^0.24.0"
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.14.0",
+    "xml2js": "^0.6.2"
   }
 }

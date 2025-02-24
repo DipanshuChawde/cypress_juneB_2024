@@ -45,6 +45,17 @@ npx cypress run --spec cypress/e2e/3-webElements/1.loginWeb.cy.js
 
 ---------------------------------------------------------------------------------
 
+run cypress test cases in parallel
+step 1 : install 
+npm install cypress-parallel 
+
+step 2 : in package .json create following script
+
+"test" : "npx cypress run --headed"
+"cypress:parallel" : "cypress-parallel -d cypress/e2e/parallelExe/ -t 2 -s test"
+ 
+------------------------------------------------------------------------------------
+
 Topics Covered 
 1. Basic
 2.Hooks and Commands

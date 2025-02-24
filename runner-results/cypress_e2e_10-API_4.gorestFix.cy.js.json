@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 3,
+  "passes": 0,
+  "pending": 0,
+  "failures": 3,
+  "start": "2025-02-24T07:38:30.021Z",
+  "duration": 2766,
+  "file": "cypress\\e2e\\10-API\\4.gorestFix.cy.js"
+}

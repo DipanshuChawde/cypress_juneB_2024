@@ -58,3 +58,4 @@ describe('verify tables in cypress', function () {
         })
     })
 })
+
