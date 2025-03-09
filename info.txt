@@ -46,7 +46,9 @@ npx cypress run --spec cypress/e2e/3-webElements/1.loginWeb.cy.js
 ---------------------------------------------------------------------------------
 https://github.com/cypress-io/github-action for reference
 
+https://youtu.be/WH4p-eovozU?si=3X5hIh4NKpl9SQuT video for github actions
 
+https://youtu.be/N91Qh5LDDuw?si=XfF5q4xzpL818VSD video for github actions in parallel mode
 
 ------------------------------------------------------------------------------
 run cypress test cases in parallel
