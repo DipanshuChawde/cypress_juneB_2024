@@ -43,9 +43,14 @@ describe('verify radip button and check box', function () {
 
     it('verify radiobutton/check box -Amazon',function(){
         cy.visit('https://www.amazon.in/')
+        cy.log('gitaction')
         cy.get('[class="nav-line-2"]').first().click()
         cy.get('[value="hi_IN"]').click({force: true})
         cy.get('[value="mr_IN"]').click({force: true})
     })
+
+
+
+
 
 })
