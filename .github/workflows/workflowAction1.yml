@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy : 
       fail-fast : false
-      matrix : [1, 2, 3, 4] 
+      matrix : 
+        container : [1, 2, 3, 4] 
 
     steps:
       # Step 1: Checkout code from the repository
@@ -32,8 +33,7 @@ jobs:
       - name: Run Cypress tests
         run: |
           npx cypress run --spec "cypress/e2e/parallelExe/**/*.cy.js"
-        with : 
-          parallel : true  
+        
 
       # (Optional) Step 5: Upload videos and screenshots on failure
       - name: Upload Cypress Artifacts
